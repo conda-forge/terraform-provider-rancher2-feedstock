@@ -1,6 +1,6 @@
 {% set provider = "rancher2" %}
-{% set goname = "github.com/terraform-providers/terraform-provider-"+provider.lower() %}
-{% set version = "1.9.0" %}
+{% set goname = "github.com/rancher/terraform-provider-"+provider.lower() %}
+{% set version = "1.25.0" %}
 
 {% set name = goname.split('/')[-1] %}
 
@@ -13,16 +13,16 @@ package:
 
 source:
   url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-  sha256: 41b1896efb6389765afc1cf9ef027587e59856e339d1cc8fadffb122b984b84f
+  sha256: ee18a10db75fd8eac4952213eb7c723d7be36bf918d357e00c363ffd9f647395
 
 build:
-  number: 2
+  number: 0
   script:
     - go build -v -o {{ target_gobin }}..{{ os.sep }}{{ plugin_dir }}{{ os.sep }}{{ target_goos }}_{{ target_goarch }}{{ os.sep }}{{ x4_plugin }}{{ target_goexe }}
 
 requirements:
   build:
-    - {{ compiler('go') }} 1.16
+    - {{ compiler('go') }} 1.19
 
 test:
   requires:
@@ -50,7 +50,7 @@ about:
   license_file: LICENSE
   summary: The Terraform {{ provider }} provider
   doc_url: https://www.terraform.io/docs/providers/{{ provider|lower }}/index.html
-  dev_url: https://github.com/terraform-providers/{{ name }}
+  dev_url: https://github.com/rancher/{{ name }}
 
 extra:
   recipe-maintainers:
