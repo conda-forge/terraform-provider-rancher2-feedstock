@@ -9,7 +9,7 @@ Package license: MPL-2.0
 
 Summary: The Terraform rancher2 provider
 
-Development: https://github.com/terraform-providers/terraform-provider-rancher2
+Development: https://github.com/rancher/terraform-provider-rancher2
 
 Documentation: https://www.terraform.io/docs/providers/rancher2/index.html
 
