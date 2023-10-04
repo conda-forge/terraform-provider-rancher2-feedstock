@@ -1,6 +1,6 @@
 {% set provider = "rancher2" %}
 {% set goname = "github.com/rancher/terraform-provider-"+provider.lower() %}
-{% set version = "2.0.0" %}
+{% set version = "3.1.1" %}
 
 {% set name = goname.split('/')[-1] %}
 
@@ -13,7 +13,7 @@ package:
 
 source:
   url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-  sha256: deae32e388e4fe6f8a81d379b5c2c2f9d26d1acf1a9fa3379997331e672eab5c
+  sha256: ca5e1c4f9b73766576afebd836999a2944f7319d1d8092c1f21c9c7d7f05bf10
 
 build:
   number: 0
