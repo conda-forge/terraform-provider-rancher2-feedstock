@@ -1,6 +1,6 @@
 {% set provider = "rancher2" %}
 {% set goname = "github.com/rancher/terraform-provider-"+provider.lower() %}
-{% set version = "4.2.0" %}
+{% set version = "13.1.4" %}
 
 {% set name = goname.split('/')[-1] %}
 
@@ -13,16 +13,16 @@ package:
 
 source:
   url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-  sha256: 037d8e8706b90220f3fed8f443e799482403ff5783182e12f8c4e7661ef67e13
+  sha256: 21eef89d0d616c39022e75dd6cf96de3b96a408c1544e4c5b2816d9eb5ee7cb0
 
 build:
-  number: 1
+  number: 0
   script:
     - go build -v -o {{ target_gobin }}..{{ os.sep }}{{ plugin_dir }}{{ os.sep }}{{ target_goos }}_{{ target_goarch }}{{ os.sep }}{{ x4_plugin }}{{ target_goexe }}
 
 requirements:
   build:
-    - {{ compiler('go') }} 1.19
+    - {{ compiler('go') }}
 
 test:
   requires:
